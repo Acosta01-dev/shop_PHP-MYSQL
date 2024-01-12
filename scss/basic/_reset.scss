@@ -1,0 +1,68 @@
+// scss/00-tools/reset.scss
+
+// Box Sizing Reset
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// Remove Margin and Padding
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+// Remove List Styles
+ul,
+ol {
+    list-style: none;
+}
+
+// Remove Default Styles for Links
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Remove Default Styles for Form Elements
+
+input,
+button,
+textarea,
+select {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// Set Default Fonts
+body,
+html {
+    overflow-x: hidden;
+
+}
+
+body {
+    font-family: Helvetica;
+    color: $color_text;
+    background-color: $color_body;
+}
+
+html {
+    width: 100%;
+    background-color: $color_html;
+}

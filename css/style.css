@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0; }
+
+ul,
+ol {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body,
+html {
+  overflow-x: hidden; }
+
+body {
+  font-family: Helvetica;
+  color: #1d1d1f;
+  background-color: #E7E9E8; }
+
+html {
+  width: 100%;
+  background-color: #dddddd; }
+
+.header {
+  background-color: #39594c;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 4rem; }
+  .header .header-logo {
+    height: 10px;
+    flex: 0.6; }
+    .header .header-logo a {
+      padding-left: 5%;
+      display: flex;
+      flex-direction: row; }
+      .header .header-logo a p {
+        position: relative;
+        top: 0px;
+        font-size: 1.5rem;
+        margin: 0 .5rem;
+        color: #ffff; }
+      .header .header-logo a svg {
+        position: relative;
+        bottom: 10px;
+        color: #ffff; }
+  .header .header-nav_items {
+    flex: 0.4;
+    position: relative;
+    color: #ffff; }
+    @media screen and (min-width: 1235px) {
+      .header .header-nav_items {
+        max-height: 100rem !important; } }
+    @media screen and (max-width: 1235px) {
+      .header .header-nav_items {
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 4rem;
+        padding: 0 2%;
+        width: 100%;
+        max-height: 0rem;
+        transition: max-height 0.3s ease-in-out;
+        background-color: #2c443a; } }
+    .header .header-nav_items ul {
+      display: flex;
+      flex-direction: row; }
+      @media screen and (max-width: 1235px) {
+        .header .header-nav_items ul {
+          flex-direction: column; } }
+      .header .header-nav_items ul li {
+        margin: 0 1rem; }
+        @media screen and (max-width: 1235px) {
+          .header .header-nav_items ul li {
+            margin: 1rem; } }
+  .header .header-user_cart_menu {
+    position: absolute;
+    right: 3%;
+    top: 1rem; }
+    .header .header-user_cart_menu svg {
+      color: #ffff; }
+    .header .header-user_cart_menu #burguer_menu {
+      visibility: hidden;
+      margin-left: 1rem;
+      color: #ffff; }
+      @media screen and (max-width: 1235px) {
+        .header .header-user_cart_menu #burguer_menu {
+          visibility: visible; } }
+
+#index_main .index_main-introduction {
+  background-color: #39594c;
+  padding: 7% 10% 2rem 10%;
+  display: flex;
+  flex-direction: row; }
+  @media screen and (max-width: 1235px) {
+    #index_main .index_main-introduction {
+      flex-direction: column; } }
+  #index_main .index_main-introduction h2 {
+    color: #ffff;
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: .5rem; }
+  #index_main .index_main-introduction p {
+    color: #dddddd;
+    font-weight: 100; }
+  #index_main .index_main-introduction div {
+    flex: 0.7; }
+    #index_main .index_main-introduction div:nth-child(2) {
+      flex: 0.3; }
+    #index_main .index_main-introduction div img {
+      position: relative;
+      left: 3.5rem;
+      bottom: 3rem;
+      width: 250px;
+      height: 100%;
+      -webkit-filter: drop-shadow(5px 5px 5px #222);
+      filter: drop-shadow(15px 5px 5px #222); }
+      @media screen and (max-width: 1235px) {
+        #index_main .index_main-introduction div img {
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%); } }
+
+#index_main .index_main-introduction_buttons {
+  margin: 2.5rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+  #index_main .index_main-introduction_buttons .button {
+    border-radius: 15px;
+    padding: .5rem 2rem; }
+    #index_main .index_main-introduction_buttons .button:first-child {
+      background-color: #E9B738;
+      border: solid #E9B738 2px;
+      margin: 0 1rem 1rem 0; }
+    #index_main .index_main-introduction_buttons .button:nth-child(2) {
+      border: solid #ffff 2px;
+      color: #ffff;
+      margin: 0 1rem 1rem 0; }
