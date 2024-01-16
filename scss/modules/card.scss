@@ -74,3 +74,13 @@
     }
 
 }
+
+.cart-message {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.cart-message.fade-out {
+    opacity: 0;
+}
+

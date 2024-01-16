@@ -13,29 +13,52 @@ document.addEventListener('DOMContentLoaded', function () {
 // END Burguer Menu
 
 // Add to cart, AJAX
-document.addEventListener('DOMContentLoaded', function () {
-    var botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
-    botonesAgregarCarrito.forEach(function (boton) {
-        boton.addEventListener('click', function () {
-            var id = parseInt(this.closest('.catalog_card').getAttribute('data-id'));
-            var nombre = this.closest('.catalog_card').getAttribute('data-nombre');
-            var precio = parseFloat(this.closest('.catalog_card').getAttribute('data-precio'));
-            agregarAlCarrito(id, nombre, precio);
-        });
-    });
+var botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
+botonesAgregarCarrito.forEach(function (boton) {
+    boton.addEventListener('click', function () {
+        var id = parseInt(this.closest('.catalog_card').getAttribute('data-id'));
+        var nombre = this.closest('.catalog_card').getAttribute('data-nombre');
+        var precio = parseFloat(this.closest('.catalog_card').getAttribute('data-precio'));
+        agregarAlCarrito(id, nombre, precio);
 
-    function agregarAlCarrito(id, nombre, precio) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', './php/add_to_cart.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                //  document.getElementById('carrito').innerHTML = xhr.responseText;
-            }
-        };
-        xhr.send('id=' + id + '&nombre=' + nombre + '&precio=' + precio);
-    }
+        botonparrafo = this.querySelector("p");
+        agregarAlCarritoAnimacion(botonparrafo);
+    });
 });
+
+function agregarAlCarrito(id, nombre, precio) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', './php/add_to_cart.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            actualizarNumeroCarrito(xhr.responseText);
+        }
+    };
+    xhr.send('id=' + id + '&nombre=' + nombre + '&precio=' + precio);
+}
+
+function actualizarNumeroCarrito(cantidad) {
+    var numeroCarritoElement = document.getElementById('numero-carrito');
+    numeroCarritoElement.innerText = cantidad;
+}
+
+function agregarAlCarritoAnimacion(parrafo) {
+    parrafo.classList.add('fade-out');
+    setTimeout(function () {
+        parrafo.classList.remove('fade-out');
+        parrafo.innerText = "Item added!";
+    }, 500);
+
+    setTimeout(function () {
+        parrafo.classList.add('fade-out');
+    }, 2000);
+
+    setTimeout(function () {
+        parrafo.classList.remove('fade-out');
+        parrafo.innerText = "Add to cart.";
+    }, 2500);
+}
 // END Add to cart, AJAX
 
 // Delete from cart, AJAX
@@ -55,13 +78,13 @@ function eliminarVisualmenteDelCarrito(li) {
     }
 }
 
-function eliminarLogicamenteDelCarrito(id){
+function eliminarLogicamenteDelCarrito(id) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '../php/delete_from_cart.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            console.log(xhr.ressponseText);
+            console.log(xhr.responseText);
         }
     };
     xhr.send('eliminar_id=' + id);

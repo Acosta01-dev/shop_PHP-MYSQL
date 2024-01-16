@@ -15,4 +15,7 @@ if ($index !== FALSE) {
 } else {
     $_SESSION["carrito"][] = array("id" => $id, "nombre" => $nombre, "precio" => $precio, "cantidad" => 1);
 }
+
+echo count($_SESSION["carrito"]);
+
 ?>
