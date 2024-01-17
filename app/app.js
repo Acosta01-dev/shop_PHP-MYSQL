@@ -19,14 +19,16 @@ botonesAgregarCarrito.forEach(function (boton) {
         var id = parseInt(this.closest('.catalog_card').getAttribute('data-id'));
         var nombre = this.closest('.catalog_card').getAttribute('data-nombre');
         var precio = parseFloat(this.closest('.catalog_card').getAttribute('data-precio'));
-        agregarAlCarrito(id, nombre, precio);
+        var cantidad = parseInt(this.previousElementSibling.value);
+        agregarAlCarrito(id, nombre, precio, cantidad);
 
+        reiniciarValorInput(this.previousElementSibling);
         botonparrafo = this.querySelector("p");
         agregarAlCarritoAnimacion(botonparrafo);
     });
 });
 
-function agregarAlCarrito(id, nombre, precio) {
+function agregarAlCarrito(id, nombre, precio, cantidad) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', './php/add_to_cart.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -35,12 +37,16 @@ function agregarAlCarrito(id, nombre, precio) {
             actualizarNumeroCarrito(xhr.responseText);
         }
     };
-    xhr.send('id=' + id + '&nombre=' + nombre + '&precio=' + precio);
+    xhr.send('id=' + id + '&nombre=' + nombre + '&precio=' + precio + "&cantidad=" + cantidad);
 }
 
 function actualizarNumeroCarrito(cantidad) {
     var numeroCarritoElement = document.getElementById('numero-carrito');
     numeroCarritoElement.innerText = cantidad;
+}
+
+function reiniciarValorInput(input) {
+    input.value = 1;
 }
 
 function agregarAlCarritoAnimacion(parrafo) {
@@ -59,6 +65,8 @@ function agregarAlCarritoAnimacion(parrafo) {
         parrafo.innerText = "Add to cart.";
     }, 2500);
 }
+
+
 // END Add to cart, AJAX
 
 // Delete from cart, AJAX
@@ -90,3 +98,24 @@ function eliminarLogicamenteDelCarrito(id) {
     xhr.send('eliminar_id=' + id);
 }
 //END Delete from cart, AJAX
+
+// Update Cart
+var botonesActualizarCarrito = document.querySelectorAll('.actualizar-cantidad');
+botonesActualizarCarrito.forEach(function (boton) {
+    boton.addEventListener('click', function () {
+        var id = this.getAttribute('data-id');
+        var cantidad = parseInt(this.previousElementSibling.value);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../php/add_to_cart.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log(xhr.responseText);
+                location.reload();
+            }
+        };
+        xhr.send('id=' + id + "&cantidad=" + cantidad + '&update=true');
+    });
+});
+// END Update Cart

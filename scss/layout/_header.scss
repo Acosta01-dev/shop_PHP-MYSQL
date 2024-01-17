@@ -72,6 +72,7 @@
             }
         }
     }
+      
 
     .header-user_cart_menu {
        // background-color: blueviolet;
@@ -82,6 +83,16 @@
             color: $color_text_secundario;
         }
 
+        #carrito{
+            p{
+                position: absolute;
+                top: 0;
+                left: 4.3rem;
+                background-color: $color_secundario;
+                padding: 1px 5px;
+                border-radius: 25px;
+            }
+        }
         #burguer_menu {
             visibility:hidden;
             margin-left: 1rem;

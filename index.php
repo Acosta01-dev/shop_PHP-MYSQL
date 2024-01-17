@@ -58,7 +58,7 @@ $stmt->execute();
                         d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
                 </svg>
             </a>
-            <a href="./php/see_cart.php">
+            <a href="./php/see_cart.php" id="carrito">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                     class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path
@@ -123,6 +123,7 @@ $stmt->execute();
                         <i>$
                             <?= $producto["precio"] ?> p.u.
                         </i>
+                        <input type="number" class="catalog_card_numero" name="numero" value="1" min="1" max="99">
                         <button class="agregar-carrito">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-bag-plus" viewBox="0 0 16 16">

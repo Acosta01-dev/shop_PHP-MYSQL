@@ -95,6 +95,9 @@ html {
     .catalog_card .catalog_card-footer i {
       margin-bottom: 5px;
       color: #ffff; }
+    .catalog_card .catalog_card-footer input {
+      width: 33px;
+      margin-bottom: 5px; }
     .catalog_card .catalog_card-footer button {
       cursor: pointer;
       padding: .5rem 1rem;
@@ -177,6 +180,13 @@ html {
     top: 1rem; }
     .header .header-user_cart_menu svg {
       color: #ffff; }
+    .header .header-user_cart_menu #carrito p {
+      position: absolute;
+      top: 0;
+      left: 4.3rem;
+      background-color: #E9B738;
+      padding: 1px 5px;
+      border-radius: 25px; }
     .header .header-user_cart_menu #burguer_menu {
       visibility: hidden;
       margin-left: 1rem;
@@ -218,6 +228,10 @@ html {
           bottom: 0;
           left: 50%;
           transform: translateX(-50%); } }
+      @media screen and (min-width: 1235px) {
+        #index_main .index_main-introduction div img {
+          width: 300px;
+          bottom: 3.5rem; } }
 
 #index_main .index_main-introduction_buttons {
   margin: 2.5rem 0;
