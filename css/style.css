@@ -195,6 +195,11 @@ html {
         .header .header-user_cart_menu #burguer_menu {
           visibility: visible; } }
 
+footer {
+  background-color: #293f36;
+  padding: 3rem 15%;
+  color: #ffff; }
+
 #index_main .index_main-introduction {
   background-color: #39594c;
   padding: 7% 10% 2rem 10%;
