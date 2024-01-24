@@ -39,13 +39,13 @@ $stmt->execute();
         <nav class="header-nav_items">
             <ul>
                 <li>
-                    <a href="a">Catalog</a>
+                    <a href="?a">Catalog</a>
                 </li>
                 <li>
-                    <a href="b">About Us</a>
+                    <a href="?b">About Us</a>
                 </li>
                 <li>
-                    <a href="c">Contact Us</a>
+                    <a href="?c">Contact Us</a>
                 </li>
             </ul>
         </nav>
@@ -121,7 +121,7 @@ $stmt->execute();
                     </div>
                     <div class="catalog_card-footer">
                         <i>$
-                            <?= $producto["precio"] ?> p.u.
+                            <?= $producto["precio"] ?> per unit
                         </i>
                         <input type="number" class="catalog_card_numero" name="numero" value="1" min="1" max="99">
                         <button class="agregar-carrito">

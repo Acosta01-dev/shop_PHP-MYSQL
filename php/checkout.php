@@ -17,7 +17,7 @@ try {
     foreach ($carrito as $producto) {
         $items[] = array(
             'name' => $producto['nombre'],
-            'description' => 'Descripción del producto',
+            'description' => 'TODO',
             'quantity' => $producto['cantidad'],
             'price' => number_format($producto['precio'], 2),
         );

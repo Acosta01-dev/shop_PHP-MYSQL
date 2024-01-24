@@ -73,18 +73,12 @@ function agregarAlCarritoAnimacion(parrafo) {
 var botonesEleminarCarrito = document.querySelectorAll(".eliminar-item");
 botonesEleminarCarrito.forEach(function (boton) {
     boton.addEventListener("click", function () {
-        var liElement = this.parentNode;
+        //var liElement = this.parentNode;
         var idEliminar = this.getAttribute('data-id');
-        eliminarVisualmenteDelCarrito(liElement);
+        //eliminarVisualmenteDelCarrito(liElement);
         eliminarLogicamenteDelCarrito(idEliminar);
     });
 });
-
-function eliminarVisualmenteDelCarrito(li) {
-    if (li) {
-        li.remove();
-    }
-}
 
 function eliminarLogicamenteDelCarrito(id) {
     var xhr = new XMLHttpRequest();
@@ -93,6 +87,7 @@ function eliminarLogicamenteDelCarrito(id) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(xhr.responseText);
+            location.reload();
         }
     };
     xhr.send('eliminar_id=' + id);
@@ -104,8 +99,9 @@ var botonesActualizarCarrito = document.querySelectorAll('.actualizar-cantidad')
 botonesActualizarCarrito.forEach(function (boton) {
     boton.addEventListener('click', function () {
         var id = this.getAttribute('data-id');
-        var cantidad = parseInt(this.previousElementSibling.value);
-
+        var inputId = 'cantidad-' + id;
+        var cantidad = parseInt(document.getElementById(inputId).value);
+        
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '../php/add_to_cart.php', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
