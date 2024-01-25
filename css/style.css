@@ -213,6 +213,9 @@ footer {
     font-weight: 500;
     font-size: 2.5rem;
     margin-bottom: .5rem; }
+    @media screen and (max-width: 1235px) {
+      #index_main .index_main-introduction h2 {
+        margin-top: 1.5rem; } }
   #index_main .index_main-introduction p {
     color: #dddddd;
     font-weight: 100; }
@@ -244,6 +247,9 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start; }
+  @media screen and (max-width: 700px) {
+    #index_main .index_main-introduction_buttons {
+      justify-content: center; } }
   #index_main .index_main-introduction_buttons .button {
     border-radius: 25px;
     padding: .5rem 2rem; }
@@ -268,6 +274,9 @@ footer {
 #see_cart_body {
   padding: 5% 15%;
   height: 100vh; }
+  @media screen and (max-width: 1235px) {
+    #see_cart_body {
+      padding: 5%; } }
   #see_cart_body input {
     border: 1px solid black;
     padding: 0 12px; }
@@ -305,6 +314,9 @@ footer {
 #user_panel_body {
   height: 100vh;
   padding: 5% 15%; }
+  @media screen and (max-width: 1235px) {
+    #user_panel_body {
+      padding: 5%; } }
 
 #body_loginregister {
   height: 100vh;
@@ -313,3 +325,6 @@ footer {
 #body_sucess {
   height: 100vh;
   padding: 5% 10%; }
+  @media screen and (max-width: 1235px) {
+    #body_sucess {
+      padding: 5%; } }

@@ -30,61 +30,68 @@ if (!isset($_SESSION["user"])) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Purchase History</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+        <!-- MDB -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
 
         <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body id="user_panel_body">
-        
-        <h2 class='mb-2'>Purchase History:</h2> <p><?=  $_SESSION["user"] . " | Your user ID: ". $user_id?> </p><hr/>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Product</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Unit Price</th>
-                    <th scope="col">Purchase Date</th>
-                    <th scope="col">Payment Status</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <?php
-                while ($row = $purchase_stmt->fetch(PDO::FETCH_ASSOC)) {
-                    ?>
+        <h2 class='mb-2'>Purchase History:</h2>
+        <p>
+            <?= $_SESSION["user"] . " | Your user ID: " . $user_id ?>
+        </p>
+        <hr />
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>
-                            <?= htmlspecialchars($row['product_name']); ?>
-                        </td>
-                        <td>
-                            <?= $row['quantity']; ?>
-                        </td>
-                        <td>$
-                            <?= $row['amount'];  ?> 
-                        </td>
-                        <td>
-                            <?= $row['purchase_date']; ?>
-                        </td>
-                        <td>
-                            <?= $row['payment_status']; ?>
-                        </td>
+                        <th scope="col">Product</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Unit Price</th>
+                        <th scope="col">Purchase Date</th>
+                        <th scope="col">Payment Status</th>
                     </tr>
-                    <?php
-                }
-                ?>
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
+                    <?php
+                    while ($row = $purchase_stmt->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($row['product_name']); ?>
+                            </td>
+                            <td>
+                                <?= $row['quantity']; ?>
+                            </td>
+                            <td>$
+                                <?= $row['amount']; ?>
+                            </td>
+                            <td>
+                                <?= $row['purchase_date']; ?>
+                            </td>
+                            <td>
+                                <?= $row['payment_status']; ?>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+
+                </tbody>
+            </table>
+        </div>
 
         <a href="../index.php" class="btn btn-primary mb-1">Go Back</a>
         <form action="../php/logout.php" method="post">
             <button type="submit" class="btn btn-danger">Sign Out</button>
         </form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
     </body>
 
     </html>
