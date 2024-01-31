@@ -322,6 +322,22 @@ footer {
   height: 100vh;
   padding: 5% 10%; }
 
+#body_adminpanel {
+  height: 100vh;
+  padding: 3%; }
+  #body_adminpanel main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    #body_adminpanel main form {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      border-radius: 5px;
+      padding: .5rem; }
+      #body_adminpanel main form input {
+        margin: .2rem; }
+
 #body_sucess {
   height: 100vh;
   padding: 5% 10%; }
