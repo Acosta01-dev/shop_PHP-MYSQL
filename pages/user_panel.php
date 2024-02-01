@@ -2,7 +2,10 @@
 require __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . 'config.php';
 
 session_start();
-
+if (isset($_SESSION["admin"]) && $_SESSION["admin"] === TRUE) {
+    header("location: ../pages/admin_panel.php");
+    exit();
+}
 if (!isset($_SESSION["user"])) {
     header("location: ../pages/login_register_screen.php?user=0");
     exit();

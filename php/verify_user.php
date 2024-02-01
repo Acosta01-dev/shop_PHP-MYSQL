@@ -3,7 +3,7 @@ session_start();
 require __DIR__ . DIRECTORY_SEPARATOR . "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $login_email = $_POST["login_email"];
+    $login_email = filter_var($_POST["login_email"], FILTER_VALIDATE_EMAIL);
     $login_password = $_POST["login_password"];
 
     $conn = new PDO("mysql:host=$host;dbname=$base_datos", $usuario, $contrasena);
@@ -17,6 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($user && password_verify($login_password, $user['password'])) {
         $_SESSION["user"] = $login_email;
+        if ($user && (int)$user['is_admin'] === 1) {
+            $_SESSION["admin"] = TRUE;
+        }
         header("Location: ../pages/user_panel.php");
         exit(); 
     } else {

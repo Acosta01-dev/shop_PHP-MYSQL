@@ -26,21 +26,27 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body id="body_adminpanel">
+    <div class="d-flex flex-row">
+        <a href="../index.php" class="btn btn-primary m-1">Go Back</a>
+        <form action="../php/logout.php" method="post">
+            <button type="submit" class="btn btn-danger  m-1">Sign Out</button>
+        </form>
+    </div>
     <?php
     if (isset($_GET["edited"])) {
-        echo "<p class='alert alert-primary' role='alert'>Element edited!</p>";
+        echo "<p class='alert alert-primary m-3' role='alert'>Element edited!</p>";
     }
 
     if (isset($_GET["deleted"])) {
-        echo "<p class='alert alert-warning' role='alert'>Element deleted!</p>";    }
+        echo "<p class='alert alert-warning m-3' role='alert'>Element deleted!</p>";
+    }
 
     if (isset($_GET["added"])) {
-        echo "<p class='alert alert-success' role='alert'>Element added!</p>";    }
+        echo "<p class='alert alert-success m-3' role='alert'>Element added!</p>";
+    }
     ?>
     <main>
-
         <?php
-
         if ($result) {
             foreach ($result as $row) {
                 ?>
@@ -66,7 +72,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <label for="imagen">New Image:</label>
                     <input type="file" name="uploadfile" value="<?= $row["imagen"] ?>" />
                     <?= "Current Image: " . $row["imagen"] ?>
-                    <img src="../img/<?= $row["imagen"] ?>" style="width:50px; heighth:50px;">
+                    <img src="../img/<?= $row["imagen"] ?>" style="width:50px; height:50px; margin:5px;">
                     <input type="hidden" name="id" id="id" value="<?= $row["id"] ?>">
 
                     <div>
