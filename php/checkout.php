@@ -8,10 +8,15 @@ require __DIR__ . DIRECTORY_SEPARATOR . 'paypal_config.php';
 try {
     $carrito = $_SESSION["carrito"];
 
+    if(!isset($_SESSION["user"])){
+        header("location: ../index.php");
+    }
+    
     if (empty($carrito)) {
         echo "El carrito está vacío";
         exit;
     }
+  
 
     $items = array();
     foreach ($carrito as $producto) {

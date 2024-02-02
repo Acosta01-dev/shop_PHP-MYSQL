@@ -39,13 +39,13 @@ $stmt->execute();
         <nav class="header-nav_items">
             <ul>
                 <li>
-                    <a href="?a">Catalog</a>
+                    <a class="hover-underline-animation" href="?a">Catalog</a>
                 </li>
                 <li>
-                    <a href="?b">About Us</a>
+                    <a class="hover-underline-animation" href="?b">About Us</a>
                 </li>
                 <li>
-                    <a href="?c">Contact Us</a>
+                    <a class="hover-underline-animation" href="?c">Contact Us</a>
                 </li>
             </ul>
         </nav>

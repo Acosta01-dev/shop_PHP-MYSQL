@@ -1,10 +1,12 @@
 @import 'scss/helpers/variables';
+@import 'scss/helpers/mixins';
 
 @import 'scss/basic/reset';
 @import 'scss/basic/typography';
 
 @import 'scss/modules/card';
 @import 'scss/modules/button';
+@import 'scss/modules/underlineanimation';
 
 @import 'scss/layout/header';
 @import 'scss/layout/footer';

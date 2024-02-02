@@ -77,19 +77,18 @@
             border-radius: 25px;
             padding: .5rem 2rem;
 
-           
-
             &:first-child {
                 background-color: $color_secundario;
                 border: solid $color_secundario 2px;
                 margin: 0 1rem 1rem 0;
-
+                @include button-animation($color_secundario, $color_text_secundario);
             }
 
             &:nth-child(2) {
                 border: solid $color_text_secundario 2px;
-                color: $color_text_secundario;
+                color: $color_text;
                 margin: 0 1rem 1rem 0;
+                @include button-animation($color_text_secundario, $color_text);
             }
         }
     }
