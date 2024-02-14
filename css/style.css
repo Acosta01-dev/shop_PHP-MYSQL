@@ -230,8 +230,7 @@ footer {
     @media screen and (min-width: 750px) {
       footer .form-field {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto minmax(100px, 1fr);
-        background-color: red; } }
+        grid-template-rows: auto minmax(100px, 1fr); } }
     footer .form-field input[type="text"],
     footer .form-field input[type="email"] {
       border-radius: 4px;
