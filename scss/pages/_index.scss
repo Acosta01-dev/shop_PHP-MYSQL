@@ -95,8 +95,8 @@
 }
 
 
-.catalog {
-    padding: 5% 15%;
+#catalog {
+    padding: 5% 15% 3% 15%;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -104,5 +104,102 @@
 
     .catalog_card {
         margin: 1rem;
+    }
+}
+
+#about_us {
+    padding: 5% 15% 8% 15%;
+    display: flex;
+    @media screen and (max-width: 1090px) {
+        flex-direction: column;
+    }
+
+    .about_us-sec {
+
+        @media screen and (max-width: 700px) {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+        &:first-child {
+           // flex: 0.5;
+            flex: 1;
+
+
+            /*@media screen and (max-width: 1367px) {
+                flex: 1;
+            }*/
+
+            .about_us-sec-icons {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+
+                grid-gap: 30px;
+                margin-top: 30px;
+
+                &-icon {
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+
+                &-text {
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+
+                &-title {
+                    font-weight: 700;
+                    margin: 5px 0 2px 0;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+            }
+        }
+
+        &:last-child {
+            margin: 0 35px;
+            flex: 0.5;
+            border-radius: 5px;
+            overflow: hidden;
+
+            position: relative;
+            left: 25px;
+            top: 17px;
+            @media screen and (max-width: 1090px) {
+                flex: 1;
+                left: 0;
+                width: 100%;
+                margin: 15px 0px;
+            }
+
+            @media screen and (max-width: 1367px) {
+                top: 15px;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                max-width: 100%;
+                /* La imagen no superará el ancho del contenedor */
+                height: auto;
+                max-height: 100%;
+                /* La imagen no superará la altura del contenedor */
+                display: block;
+                /* Eliminar espacio adicional por debajo de la imagen */
+                margin: auto;
+                /* Centrar la imagen horizontalmente */
+                height: 100%;
+
+
+            }
+        }
     }
 }

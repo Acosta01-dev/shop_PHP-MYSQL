@@ -61,13 +61,10 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div>
 
                         <input type="number" id="precio" name="precio" value="<?= $row["precio"] ?>" required>
-                        <label for="precio">Precio</label>
+                        <label for="precio">Price</label>
                     </div>
-
                     <input type="text" id="descripcion" name="descripcion" value="<?= $row["descripcion"] ?>" required>
-
                     <input type="text" id="categoria" name="categoria" value="<?= $row["categoria"] ?>" required>
-
 
                     <label for="imagen">New Image:</label>
                     <input type="file" name="uploadfile" value="<?= $row["imagen"] ?>" />
@@ -78,7 +75,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div>
                         <input class="btn btn-secondary btn-warning" type="submit" name="update" value="Update">
                         <input class="btn btn-secondary btn-danger" type="submit" name="delete" value="Delete"
-                            onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?')">
+                            onclick="return confirm('Are you sure you want to delete this product?')">
                     </div>
                 </form>
 
@@ -88,25 +85,22 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div>
                 <form action="../php/update_database.php" method="post" enctype="multipart/form-data"
                     class="border border-secondary">
-                    <label for="nombre">Nombre del Producto:</label>
+                    <label for="nombre">Product Name:</label>
                     <input type="text" id="nombre" name="nombre" required>
 
                     <label for="cantidad">Stock:</label>
                     <input type="number" id="cantidad" name="cantidad" required min="1">
 
-                    <label for="precio">Precio:</label>
+                    <label for="precio">Price:</label>
                     <input type="number" id="precio" name="precio" required min="1">
 
-                    <label for="descripcion">Descripcion:</label>
+                    <label for="descripcion">Description:</label>
                     <input type="text" id="descripcion" name="descripcion" required>
 
-                    <label for="stock">Stock:</label>
-                    <input type="number" id="stock" name="stock" required min="1">
-
-                    <label for="categoria">Categoria:</label>
+                    <label for="categoria">Category:</label>
                     <input type="text" id="categoria" name="categoria" required>
 
-                    <label for="imagen">Imagen:</label>
+                    <label for="imagen">Image:</label>
                     <input type="file" name="uploadfile" value="" />
 
                     <input class="btn btn-secondary btn-success" type="submit" name="newitem" value="Add New Item">
