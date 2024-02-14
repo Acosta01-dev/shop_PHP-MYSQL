@@ -19,6 +19,7 @@
     <?php
     if (isset($_GET["user"]) && $_GET["user"] === "0") {
         echo "<p  class='alert alert-warning'>Please sign in before purchasing</p>";
+        echo "<p class='alert alert-danger'>Developer note: admin account: email: admin@admin.com password: admin</p>";
     }
     ?>
     <h2>Sign In</h2>
