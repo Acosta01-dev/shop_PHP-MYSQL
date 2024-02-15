@@ -31,7 +31,7 @@ This is a shop website built using PHP, JavaScript, SASS, and HTML. The website 
 2. Set up a local development environment with PHP and a web server (e.g., Apache or Nginx).
 3. Import the provided database schema into your database management system (e.g., MySQL).
 4. Update the database connection details in the `config.php` file to match your local setup.
-5. Update the PayPal API details in the `paypal_config.php` file to match the details provided by your developer account.*
+5. Update the PayPal API details in the `paypal_config.php` file to match the details provided by your PayPal developer account.*
 6. Start the web server and access the website in your browser.
 
 ## * How to use: 
