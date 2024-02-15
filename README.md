@@ -40,4 +40,6 @@ This is a shop website built using PHP, JavaScript, SASS, and HTML. The website 
 2. To test the app, you will need to use Sandbox Credentials offered by PayPal as well.
 
 ![2024-01-25 03_42_11-Window](https://github.com/Acosta01-dev/Shop/assets/79601880/5648806d-4060-4424-ad66-0cb8f225995c)
+![2024-01-25 16_39_32-Window](https://github.com/Acosta01-dev/Shop_PHP-PayPal/assets/79601880/0493240b-3f3d-4825-b7e6-a87e3f98f1b7)
+![2024-01-25 16_39_03-Window](https://github.com/Acosta01-dev/Shop_PHP-PayPal/assets/79601880/71b44186-8b11-49b6-bf58-78f8f2589073)
 
