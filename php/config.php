@@ -1,7 +1,7 @@
 <?php
 $host = 'localhost';
-$usuario = 'root';
-$contrasena = '';
+$usuario = 'acosta';
+$contrasena = '123';
 $base_datos = 'shop';
 try {
     $conn = new PDO("mysql:host=$host;dbname=$base_datos", $usuario, $contrasena);

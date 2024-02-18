@@ -48,7 +48,8 @@ body {
 
 html {
   width: 100%;
-  background-color: #dddddd; }
+  background-color: #dddddd;
+  scroll-behavior: smooth; }
 
 .catalog_card {
   width: 15rem;
@@ -119,6 +120,9 @@ html {
 
 .cart-message.fade-out {
   opacity: 0; }
+
+button {
+  cursor: pointer; }
 
 .hover-underline-animation {
   position: relative; }
@@ -241,11 +245,11 @@ footer {
       background-color: #E9B738; }
     footer .form-field textarea {
       border-radius: 4px;
-      border: 1px solid #ccc; }
+      border: 1px solid #ccc;
+      padding: 5px; }
       @media screen and (max-width: 750px) {
         footer .form-field textarea {
-          height: 100px;
-          padding: 5px; } }
+          height: 100px; } }
     footer .form-field-name {
       display: grid;
       grid-template-rows: auto 1fr; }
@@ -264,6 +268,43 @@ footer {
       @media screen and (min-width: 750px) {
         footer .form-field-comment_box {
           grid-area: 2 / 1 / 3 / 3; } }
+    footer .form-field-submit_button button {
+      padding: .5rem 1rem;
+      background-color: #E9B738;
+      border: solid #E9B738 2px;
+      margin: 0 1rem 1rem 0;
+      border-radius: 10rem;
+      display: inline-block;
+      transition: all .3s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1; }
+      footer .form-field-submit_button button:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #E9B738;
+        border-radius: 10rem;
+        z-index: -2; }
+      footer .form-field-submit_button button:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: #bf8f15;
+        transition: all .3s;
+        border-radius: 10rem;
+        z-index: -1; }
+      footer .form-field-submit_button button:hover {
+        color: #ffff;
+        border: solid #bf8f15 2px; }
+        footer .form-field-submit_button button:hover:before {
+          width: 100%; }
 
 #index_main .index_main-introduction {
   background-color: #39594c;
@@ -273,6 +314,42 @@ footer {
   @media screen and (max-width: 1235px) {
     #index_main .index_main-introduction {
       flex-direction: column; } }
+  #index_main .index_main-introduction-images {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative; }
+    @media screen and (min-width: 1235px) {
+      #index_main .index_main-introduction-images {
+        bottom: 3.5rem;
+        left: 2rem; } }
+    @media screen and (max-width: 1235px) {
+      #index_main .index_main-introduction-images {
+        margin: 0 auto;
+        width: 19rem; } }
+    #index_main .index_main-introduction-images img {
+      width: 250px;
+      transition: transform 0.5s ease;
+      position: relative;
+      left: 0rem;
+      z-index: 1;
+      -webkit-filter: drop-shadow(5px 5px 5px #222);
+      filter: drop-shadow(5px 5px 5px #222);
+      display: block;
+      /* Eliminar espacio adicional por debajo de la imagen */
+      margin: auto;
+      /* Centrar la imagen horizontalmente */
+      margin-right: 9.8rem; }
+      @media screen and (max-width: 1235px) {
+        #index_main .index_main-introduction-images img {
+          margin-right: 12rem;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%); } }
+      @media screen and (min-width: 1235px) {
+        #index_main .index_main-introduction-images img {
+          width: 300px;
+          bottom: 0rem; } }
   #index_main .index_main-introduction h2 {
     color: #ffff;
     font-weight: 500;
@@ -288,23 +365,6 @@ footer {
     flex: 0.7; }
     #index_main .index_main-introduction div:nth-child(2) {
       flex: 0.3; }
-    #index_main .index_main-introduction div img {
-      position: relative;
-      left: 3.5rem;
-      bottom: 2.5rem;
-      width: 250px;
-      z-index: 1;
-      -webkit-filter: drop-shadow(5px 5px 5px #222);
-      filter: drop-shadow(15px 5px 5px #222); }
-      @media screen and (max-width: 1235px) {
-        #index_main .index_main-introduction div img {
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%); } }
-      @media screen and (min-width: 1235px) {
-        #index_main .index_main-introduction div img {
-          width: 300px;
-          bottom: 3.5rem; } }
 
 #index_main .index_main-introduction_buttons {
   margin: 2.5rem 0;
@@ -399,7 +459,7 @@ footer {
     margin: 1rem; }
 
 #about_us {
-  padding: 3% 15% 5% 15%;
+  padding: 3% 15% 7% 15%;
   display: flex; }
   @media screen and (max-width: 1090px) {
     #about_us {

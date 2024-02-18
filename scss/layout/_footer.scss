@@ -38,10 +38,10 @@ footer {
         textarea {
             border-radius: 4px;
             border: 1px solid #ccc;
+            padding: 5px;
 
             @media screen and (max-width: 750px) {
                 height: 100px;
-                padding: 5px;
             }
         }
 
@@ -73,7 +73,16 @@ footer {
             grid-template-rows: auto 1fr;
         }
 
-        &-submit_button {}
+        &-submit_button {
+            button{
+                padding: .5rem 1rem;
+                background-color: $color_secundario;
+                border: solid $color_secundario 2px;
+                margin: 0 1rem 1rem 0;
+                border-radius: 10rem;
+                @include button-animation($color_secundario, $color_text_secundario);
+            }
+        }
     }
 
 

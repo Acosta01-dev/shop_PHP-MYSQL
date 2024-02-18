@@ -1,3 +1,5 @@
+// TO DO: 1. Create more.js files to improve organization and productivity.
+
 // Burguer Menu
 document.addEventListener('DOMContentLoaded', function () {
     var burguerMenu = document.getElementById("burguer_menu");
@@ -11,6 +13,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 // END Burguer Menu
+
+// Introduction intro Animation
+document.addEventListener("DOMContentLoaded", function () {
+    var imgContainer = document.querySelector(".index_main-introduction-images");
+    var images = document.querySelectorAll(".index_main-introduction-images img");
+    var originalPositions = [];
+    var currentPosition = 0;
+    var movementAmount = 440;
+    var totalSteps = 2;
+    var step = 0;
+
+    function getOriginalPositions(image) {
+        var computedStyle = getComputedStyle(image);
+        var transformValue = computedStyle.getPropertyValue('transform');
+        originalPositions.push(transformValue);
+    }
+
+    function moveImages() {
+        if (step < totalSteps) {
+            images.forEach(function (image) {
+                currentPosition = parseFloat(getComputedStyle(image).getPropertyValue('transform').split(',')[4]) || 0;
+                image.style.transform = "translateX(" + (currentPosition - movementAmount) + "px)";
+            });
+            step++;
+        } else {
+            images.forEach(function (image, index) {
+                image.style.transform = originalPositions[index];
+            });
+            step = 0;
+        }
+    }
+
+    images.forEach(getOriginalPositions);
+    var moveInterval = setInterval(moveImages, 3000);
+});
+//END intro Animation
 
 // Add to cart, AJAX
 var botonesAgregarCarrito = document.querySelectorAll('.agregar-carrito');
@@ -65,8 +103,6 @@ function agregarAlCarritoAnimacion(parrafo) {
         parrafo.innerText = "Add to cart.";
     }, 2500);
 }
-
-
 // END Add to cart, AJAX
 
 // Delete from cart, AJAX
@@ -101,7 +137,7 @@ botonesActualizarCarrito.forEach(function (boton) {
         var id = this.getAttribute('data-id');
         var inputId = 'cantidad-' + id;
         var cantidad = parseInt(document.getElementById(inputId).value);
-        
+
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '../php/add_to_cart.php', true);
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

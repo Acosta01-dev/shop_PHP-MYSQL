@@ -1,14 +1,59 @@
 #index_main {
     .index_main-introduction {
+        @media screen and (max-width: 1235px) {
+            flex-direction: column;
+        }
+
         background-color: $color_primario;
         padding: 7% 10% 2rem 10%;
         display: flex;
         flex-direction: row;
 
+        &-images {
+            @media screen and (min-width: 1235px) {
+                bottom: 3.5rem;
+                left: 2rem;
+            }
 
-        @media screen and (max-width: 1235px) {
-            flex-direction: column;
+            @media screen and (max-width: 1235px) {
+                margin: 0 auto;
+                width: 19rem;
+            }
+
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            position: relative;
+
+
+            img {
+                @media screen and (max-width: 1235px) {
+                    margin-right: 12rem;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                @media screen and (min-width: 1235px) {
+                    width: 300px;
+                    bottom: 0rem;
+                }
+                width: 250px;
+                transition: transform 0.5s ease;
+
+                position: relative;
+                left: 0rem;
+
+                z-index: 1;
+                -webkit-filter: drop-shadow(5px 5px 5px #222);
+                filter: drop-shadow(5px 5px 5px #222);
+             
+                display: block; /* Eliminar espacio adicional por debajo de la imagen */
+                margin: auto; /* Centrar la imagen horizontalmente */
+                margin-right: 9.8rem;
+            }
         }
+
 
         h2 {
             color: #ffff;
@@ -27,36 +72,15 @@
         }
 
         div {
-            flex: 0.7;
+            flex: 0.7; //First Half.
 
             &:nth-child(2) {
+                //Second Half | TODO: Change this in the future to improve readability.
                 flex: 0.3;
 
             }
 
-            img {
-                position: relative;
-                left: 3.5rem;
-                bottom: 2.5rem;
-                width: 250px;
-                z-index: 1;
 
-                @media screen and (max-width: 1235px) {
-                    bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-
-                }
-
-                @media screen and (min-width: 1235px) {
-                    width: 300px;
-                    bottom: 3.5rem;
-                }
-
-                -webkit-filter: drop-shadow(5px 5px 5px #222);
-                filter: drop-shadow(15px 5px 5px #222);
-
-            }
         }
     }
 
@@ -108,8 +132,9 @@
 }
 
 #about_us {
-    padding: 3% 15% 5% 15%;
+    padding: 3% 15% 7% 15%;
     display: flex;
+
     @media screen and (max-width: 1090px) {
         flex-direction: column;
     }
@@ -125,7 +150,7 @@
         }
 
         &:first-child {
-           // flex: 0.5;
+            // flex: 0.5;
             flex: 1;
 
 
@@ -173,6 +198,7 @@
             position: relative;
             left: 25px;
             top: 17px;
+
             @media screen and (max-width: 1090px) {
                 flex: 1;
                 left: 0;

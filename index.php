@@ -39,13 +39,13 @@ $stmt->execute();
         <nav class="header-nav_items">
             <ul>
                 <li>
-                    <a class="hover-underline-animation" href="?a">Catalog</a>
+                    <a class="hover-underline-animation" href="#catalog">Catalog</a>
                 </li>
                 <li>
-                    <a class="hover-underline-animation" href="?b">About Us</a>
+                    <a class="hover-underline-animation" href="#about_us">About Us</a>
                 </li>
                 <li>
-                    <a class="hover-underline-animation" href="?c">Contact Us</a>
+                    <a class="hover-underline-animation" href="#contact_form">Contact Us</a>
                 </li>
             </ul>
         </nav>
@@ -102,8 +102,10 @@ $stmt->execute();
                     <a href="#" class="button">Explore</a>
                 </div>
             </div>
-            <div>
+            <div class="index_main-introduction-images">
                 <img src="./img/PinePhone.png">
+                <img src="./img/FairPhone.png">
+                <img src="./img/honor.png">
             </div>
         </section>
         <section id="catalog">
@@ -238,7 +240,8 @@ $stmt->execute();
             </div>
 
             <div class="form-field-submit_button">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" hidden>
+                <button class="button">Submit</button>
             </div>
 
         </form>

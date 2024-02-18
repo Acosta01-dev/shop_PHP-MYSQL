@@ -39,6 +39,12 @@ This is a shop website built using PHP, JavaScript, SASS, and HTML. The website 
 1. To use this website, you first need to create a REST API app on a PayPal developer account. Once you have created the app, you will receive the client ID and a client secret key. To create a REST API app, go to your PayPal developer account and log in to the dashboard. In the dashboard, click on the "Apps & Credentials" menu. Then click on the "Create App" button.
 2. To test the app, you will need to use Sandbox Credentials offered by PayPal as well.
 
+### TO DO:
+- Add "Choose product color" dropdown menu on product cards.
+- Add "See more details" button to product cards.
+- Create category list on admin panel.
+- Add "Search By Category" button to index.
+
 ![2024-01-25 03_42_11-Window](https://github.com/Acosta01-dev/Shop/assets/79601880/5648806d-4060-4424-ad66-0cb8f225995c)
 ![2024-01-25 16_39_32-Window](https://github.com/Acosta01-dev/Shop_PHP-PayPal/assets/79601880/0493240b-3f3d-4825-b7e6-a87e3f98f1b7)
 ![2024-01-25 16_39_03-Window](https://github.com/Acosta01-dev/Shop_PHP-PayPal/assets/79601880/71b44186-8b11-49b6-bf58-78f8f2589073)
